@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    
+    <!--Bootstrap files-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
+
+     <!--linking to css-->
+     <link rel="stylesheet" href="styles/menu-horizontal.css" />
+     <link rel="stylesheet" href="styles/style.css" />
+     <link rel="stylesheet" href="styles/menu-people.css" />
+     <link rel="stylesheet" href="styles/dawaScript.css" />
+
+
+
+       <!--saying that script takes place in index.js-->
+
+     <script type="module" src="index.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+     <script src="Dawa/dawa-autocomplete2.min.js"></script>
+    
+     <script>
+      function seePerson() {
+        document.getElementById("seePerson").style.display = "block";
+        document.getElementById("addPerson").style.display = "none";
+      }
+
+      function addPerson() {
+        document.getElementById("seePerson").style.display = "none";
+        document.getElementById("addPerson").style.display = "block";
+      }
+     </script>
+   
+    <title>krak</title>
+</head>
+<body>
+
+
+  <div class="vertical-menu">
+    <div>
+      <ul id="menu" class="menu">
+        <li><a id="page-home" href="#">Home</a></li>
+        <li><a id="page-people" href="#">People</a></li>
+        <li><a id="page-hobby" href="#">Hobbies</a></li>
+      </ul>
+    <div id="content"></div>
+  </div>
+  </div>
+</body>
+
+</html>
+
+
+<template data-id="page-home">
+  <h2>Welcome to the people's search engine</h2>
+  <img src="./images/3musk.jpg" alt="musketers">
+</template>
+
+<template data-id="page-people">
+  <div id="people-menu" style="display: block; margin-bottom: 1em;">
+    <a id="page-allPerson" href="#" onclick="seePerson()" >All people</a>
+    <a id="page-addPerson" href="#" onclick="addPerson()" >Add person</a>
+    <div class="search-container">
+      <input class="people-search" id="people-search" type="search" placeholder="Search..">
+    </div>
+  </div>
+
+  <div class="people_content" id="seePerson" style="display: block">
+    <h3 id="people-header">
+      <span>All People</span>
+      <input type="search" placeholder="Search.." class="people-search" id="search-input-people" data-table="people-table">
+    </h3>
+    <table class="people-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Street</th>
+          <th>Zipcode</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody id="people-rows">
+      </tbody>
+    </table>
+  </div>
+
+  <div class="people_content" id="addPerson" style="display: none">
+    <h1>Add person</h1>
+    <form>
+      <input id="input-firstName" placeholder="First name" required />
+      <input id="input-lastName" placeholder="Last name" required />
+      <input id="input-email" type="email" placeholder="Email" required />
+      <input id="input-phone" type="number" required placeholder="Phone number" />
+      <br>
+      <label for='adresse'></label>
+      <div class='autocomplete-container'>
+        <input type="text" id="adresse" placeholder="Addresse">
+      </div>
+      <p style="display: none;">Valgt adresse: <span id="valgtadresse"></p>
+      <br>
+      <button id="btn-add-person">Add person</button>
+    </form>
+    <p id="person-info-all"></p>
+  </div>
+</template>
+
+<template data-id="page-hobby" class="people_content">
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Build a table</title>
+  </head>
+  <body>
+  <h2>All the hobbies you could dream off!</h2>
+  <div class="search-container">
+    <form>
+      <input id="hobby-search" type="text" placeholder="Search..">
+      <!-- <button id="btn-search-hobby" type="button" ><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button> -->
+    </form>
+  </div>
+  <table id="hobby-table" >
+
+  </table>
+  </body>
+
+  </html>
+  </template>
+ 

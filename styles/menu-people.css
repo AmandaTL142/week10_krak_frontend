@@ -1,0 +1,72 @@
+#people-menu {
+    overflow: hidden;
+    background-color:#444;
+    ;
+  }
+
+#people-menu a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: fit-content;
+  }
+  #people-menu a:hover {
+    background-color: #555;
+    color: white;
+  }
+  
+  #people-menu a.active {
+    background-color: #04aa6d;
+    color: white;
+  }
+  #people-menu .search-container {
+    float: right;
+  }
+  
+  #people-menu input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  #people-menu .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #people-menu .search-container button:hover {
+    background: #ccc;
+  }
+
+  .people-table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .people-table td, .people-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .people-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .people-table tr:hover {background-color: #ddd;}
+  
+  .people-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: darkslategray;
+    color: white;
+  }
